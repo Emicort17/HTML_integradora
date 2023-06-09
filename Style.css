@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:20');
-*{
-	margin:0;
-	padding:0;	
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: cursive;
+  font-family: 'Poppins', cursive;
 }
 
 a {
@@ -24,6 +26,7 @@ li {
   padding: 20px;
   background-color: #132A13;
   color: #fff;
+  height: 90px;
 }
 
 .nav-links a {
@@ -33,6 +36,9 @@ li {
 /* LOGO */
 .logo {
   font-size: 32px;
+  position: fixed;
+  top: 1%;
+  right: 1%;
 }
 
 /* NAVBAR MENU */
@@ -54,13 +60,14 @@ li {
 
 /* DROPDOWN MENU */
 .services {
-  position: relative; 
+  position: relative;
+  z-index: 1;
 }
 
 .dropdown {
   background-color: #132A13;
   padding: 1em 0;
-  position: absolute; /*WITH RESPECT TO PARENT*/
+  position: absolute;
   display: none;
   border-radius: 8px;
   top: 35px;
@@ -84,9 +91,9 @@ li {
   display: block;
 }
 
-/*Footer style*/
+/* FOOTER STYLE */
 .footer-dark {
-  padding: 50px 0;
+  padding: 10px 0;
   color: #f0f9ff;
   background-color: #282d32;
   position: fixed;
@@ -178,4 +185,3 @@ li {
   font-size: 13px;
   margin-bottom: 0;
 }
-
