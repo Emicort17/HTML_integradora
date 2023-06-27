@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="shortcut icon" href="mxlogo.png" />
+    <link rel="stylesheet" href="styleIndex.css"/>
+    <style>
+        .noticias {
+          display: flex;
+        }
+        .lista-noticias {
+          width: 300px;
+          height: 400px;
+          overflow: auto;
+        }
+        .noticia {
+          margin-bottom: 20px;
+          border: 1px solid #ccc;
+          padding: 10px;
+          cursor: pointer;
+        }
+        .noticia:hover {
+          background-color: #f2f2f2;
+        }
+        .titulo {
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        .imagen {
+          max-width: 100%;
+          height: auto;
+          margin-bottom: 10px;
+        }
+        .detalle-noticia {
+          flex-grow: 1;
+          padding-left: 20px;
+        }
+        .detalle-noticia.hidden {
+          display: none;
+        }
+      </style>
+      <script>
+        window.addEventListener('DOMContentLoaded', function() {
+          var noticias = document.querySelectorAll('.noticia');
+          noticias.forEach(function(noticia) {
+            noticia.addEventListener('click', function() {
+              var detalleNoticia = this.nextElementSibling;
+              detalleNoticia.classList.toggle('hidden');
+            });
+          });
+        });
+      </script>
+    <title>Noticias</title>
+</head>
+<body>
+    <nav class="navbar">
+        <!-- LOGO -->
+    <div class="logo"><img src="mxlogo.png" width="100px" height="75px" alt="Aqui salia un chango (yo)"></img></div>
+
+    <!-- NAVIGATION MENU -->
+    <ul class="nav-links">
+
+      <!-- NAVIGATION MENUS -->
+      <div class="menu">
+
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="Horarios.html">Horarios</a></li>
+
+        <li class="services">
+          <a href="/">Servicios</a>
+
+          <!-- DROPDOWN MENU -->
+          <ul class="dropdown">
+            <li><a href="Noticias.html">Noticias </a></li>
+            <li><a href="Jugadores.html">Jugadores</a></li>
+            <li><a href="Credenciales.html">Credenciales</a></li>
+            <li><a href="Equipo.html">Equipos</a></li>
+            <li><a href="Memes.html">Memes</a></li>
+          </ul>
+        </li>
+
+        <li><a href="paggoles.html">Ranking</a></li>
+        <li><a href="Inicio_sesion.html">Iniciar Sesion</a></li>
+      </div>
+    </ul>
+  </nav>
+<!--Hasta aqui termina navbar-->
+
+<!--Codigo dentro de la pagina principal-->
+
+<div class="noticias">
+    <div class="lista-noticias">
+      <div class="noticia">
+        <h2 class="titulo">¡Messi se marcha a Miami!</h2>
+        <img class="imagen" src="Imagenes/messi.jpg" alt="Imagen 1">
+        <p>Prefirió al Inter que al Barcelona</p>
+      </div>
+      <div class="noticia">
+        <h2 class="titulo">¡Gran Final 2023!</h2>
+        <img class="imagen" src="Imagenes/final2023.jpg" alt="Imagen 2">
+        <p>chiBas VS Tigres</p>
+      </div>
+      <div class="noticia">
+        <h2 class="titulo">Título de la noticia 3</h2>
+        <img class="imagen" src="ruta_imagen_3.jpg" alt="Imagen 3">
+        <p>Contenido de la noticia 3...</p>
+      </div>
+      <!-- Agrega más notas aquí -->
+    </div>
+    <div class="detalle-noticia hidden">
+      <!-- Aquí se mostrará el detalle de la noticia seleccionada -->
+    </div>
+  </div>
+
+<!--Termina el codigo de la pagina principal-->
+
+<!--Aqui comienza el footer-->
+<div class="footer-dark">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Diseño web</a></li>
+                        <li><a href="#">Desarollo</a></li>
+                        <li><a href="#">Host</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Acerca de</h3>
+                    <ul>
+                        <li><a href="Compai.html">Compañia</a></li>
+                        <li><a href="Equipoi.html">Equipo</a></li>
+                        <li><a href="Carrerai.html">Carrera</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Los Padrinos Toys</h3>
+                    <p>En algún rincón de la bulliciosa ciudad, un grupo de amigos programadores se unieron para formar un equipo con un nombre peculiar: Los Padrinos Toys. Aunque puede parecer extraño, su nombre reflejaba la combinación perfecta de su pasión por la programación y su sentido del humor.</p>
+                </div>
+                <div class="col item social"><a href="https://www.facebook.com/UTEZ.Morelos/?locale=es_LA"><i class="icon ion-social-facebook"></i></a><a href="https://twitter.com/utez_morelos?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="icon ion-social-twitter"></i></a><!--<a href="#"><i class="icon ion-social-snapchat"></i></a>--><a href="https://www.instagram.com/utezmorelos/?hl=es"><i class="icon ion-social-instagram"></i></a></div>
+            </div>
+            <p class="copyright">Los Padrinos Toys © 2023</p>
+        </div>
+    </footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+  </body>
+  </html>
