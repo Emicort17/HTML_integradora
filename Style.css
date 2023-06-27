@@ -96,7 +96,7 @@ li {
   padding: 10px 0;
   color: #f0f9ff;
   background-color: #282d32;
-  position: fixed;
+  position: flex;
   bottom: 0;
   left: 0;
   width: 100%;
