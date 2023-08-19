@@ -8,52 +8,89 @@
     <link rel="shortcut icon" href="mxlogo.png" />
     <link rel="stylesheet" href="styleIndex.css"/>
     <style>
-        .noticias {
-          display: flex;
-        }
-        .lista-noticias {
-          width: 300px;
-          height: 400px;
-          overflow: auto;
-        }
-        .noticia {
-          margin-bottom: 20px;
-          border: 1px solid #ccc;
-          padding: 10px;
-          cursor: pointer;
-        }
-        .noticia:hover {
-          background-color: #f2f2f2;
-        }
-        .titulo {
-          font-size: 18px;
-          font-weight: bold;
-          margin-bottom: 10px;
-        }
-        .imagen {
-          max-width: 100%;
-          height: auto;
-          margin-bottom: 10px;
-        }
-        .detalle-noticia {
-          flex-grow: 1;
-          padding-left: 20px;
-        }
-        .detalle-noticia.hidden {
-          display: none;
-        }
-      </style>
-      <script>
-        window.addEventListener('DOMContentLoaded', function() {
-          var noticias = document.querySelectorAll('.noticia');
-          noticias.forEach(function(noticia) {
-            noticia.addEventListener('click', function() {
-              var detalleNoticia = this.nextElementSibling;
-              detalleNoticia.classList.toggle('hidden');
-            });
+      .noticias {
+        display: flex;
+      }
+      .lista-noticias {
+        width: 300px;
+        height: 400px;
+        overflow: auto;
+      }
+      .noticia {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+      }
+      .noticia:hover {
+        background-color: #f2f2f2;
+      }
+      .titulo {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .imagen {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .detalle-noticia {
+        flex-grow: 1;
+        padding-left: 20px;
+        display: none;
+      }
+      .detalle-noticia.active {
+        display: block;
+      }
+      .detalle-titulo {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .detalle-encabezado {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+      .detalle-imagen {
+        width: 200px;
+        height: 200px;
+        height: auto;
+        margin-bottom: 10px;
+      }
+      .detalle-descripcion {
+        margin-bottom: 10px;
+      }
+    </style>
+    <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        var noticias = document.querySelectorAll('.noticia');
+        var detalleNoticia = document.querySelector('.detalle-noticia');
+        var detalleTitulo = document.querySelector('.detalle-titulo');
+        var detalleEncabezado = document.querySelector('.detalle-encabezado');
+        var detalleImagen = document.querySelector('.detalle-imagen');
+        var detalleDescripcion = document.querySelector('.detalle-descripcion');
+        
+        noticias.forEach(function(noticia) {
+          noticia.addEventListener('click', function() {
+            var titulo = this.querySelector('.titulo').innerText;
+            var encabezado = this.dataset.encabezado;
+            var imagen = this.querySelector('.imagen').src;
+            var contenido = this.dataset.contenido;
+            
+            detalleTitulo.innerText = titulo;
+            detalleEncabezado.innerText = encabezado;
+            detalleImagen.src = imagen;
+            detalleDescripcion.innerText = contenido;
+            
+            detalleNoticia.classList.add('active');
           });
         });
-      </script>
+      });
+    </script>
     <title>Noticias</title>
 </head>
 <body>
@@ -94,27 +131,32 @@
 
 <div class="noticias">
     <div class="lista-noticias">
-      <div class="noticia">
+      <div class="noticia" data-encabezado="Prefirió al Inter que al Barcelona" data-contenido="Hola cracks">
         <h2 class="titulo">¡Messi se marcha a Miami!</h2>
         <img class="imagen" src="Imagenes/messi.jpg" alt="Imagen 1">
-        <p>Prefirió al Inter que al Barcelona</p>
+        <h3 class="encabezado">Prefirió al Inter que al Barcelona</h3>
       </div>
-      <div class="noticia">
+      <div class="noticia" data-encabezado="¡Gran Final!" data-contenido="Hola cracks">
         <h2 class="titulo">¡Gran Final 2023!</h2>
         <img class="imagen" src="Imagenes/final2023.jpg" alt="Imagen 2">
-        <p>chiBas VS Tigres</p>
+        <h3 class="encabezado">El equipo de chiBas vs TIGRES</h3>
       </div>
-      <div class="noticia">
-        <h2 class="titulo">Título de la noticia 3</h2>
-        <img class="imagen" src="ruta_imagen_3.jpg" alt="Imagen 3">
-        <p>Contenido de la noticia 3...</p>
+      <div class="noticia" data-encabezado="¡Real Madrid vs Barcelona!" data-contenido="Hola cracks">
+        <h2 class="titulo">Clásico Español</h2>
+        <img class="imagen" src="Imagenes/barca.jpg" alt="Imagen 3">
+        <h3 class="encabezado">Los dos mejores de España</h3>
       </div>
       <!-- Agrega más notas aquí -->
     </div>
-    <div class="detalle-noticia hidden">
-      <!-- Aquí se mostrará el detalle de la noticia seleccionada -->
+    <div class="detalle-noticia">
+      <h2 class="detalle-titulo"></h2>
+      <h3 class="detalle-encabezado"></h3>
+      <img class="detalle-imagen" src="" alt="Imagen">
+      <p class="detalle-descripcion"></p>
     </div>
   </div>
+      <!-- Aquí se mostrará el detalle de la noticia seleccionada -->
+    
 
 <!--Termina el codigo de la pagina principal-->
 
